@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
+## Installation
+For be able to run this application node and npm are required
+
+For install the dependencies needed for running the app:
+
+Run the command npm install, this will install all the dependencies and after that you will be able to run this app with the development server.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
