@@ -1,0 +1,10 @@
+.nextButton{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 1rem 1rem;
+    
+    button {
+        font-size: 18px;
+    }
+}

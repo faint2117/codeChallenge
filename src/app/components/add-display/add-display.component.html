@@ -1,0 +1,32 @@
+<div class="mainContainer">
+    <div class="imageContainer">
+        <img src="{{restaurant.thumb}}" alt="">
+    </div>
+    <div class="informationContainer">
+        <div class="firstSection">
+            <div class="leftSideContainer">
+                <div class="name">
+                    <h2>
+                        {{restaurant.name}}
+                    </h2>
+                </div>
+                <div class="additionalInfo fontColor">
+                    {{restaurant.location.locality}} · {{restaurant.highlights[0]}}
+                </div>
+            </div>
+            <div class="rightSideContainer">
+                <div class="ratingContainer">
+                    <span class="rating">{{restaurant.user_rating.aggregate_rating}}</span><span class="additionalInfo fontColor">/5</span>
+                </div>
+                <div class="votesCountContainer fontColor">
+                    <span>
+                        {{restaurant.user_rating.votes}} votes
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="secondarySection fontColor">
+                <span class="openText">Open now</span> · <span class="cuisinesText">{{restaurant.cuisines}} </span> · Cost ${{restaurant.average_cost_for_two}} for two
+        </div>
+    </div>
+</div>

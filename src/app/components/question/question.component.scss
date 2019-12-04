@@ -1,0 +1,37 @@
+.textContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    .check {
+        i {
+            font-size: calc(1vw + 25px);
+            color: lime;
+        }
+    }
+}
+
+.mat-radio-button {
+    padding-right: 1rem;
+}
+
+.inputContainer {
+    padding:1.5rem;
+}
+
+.inputsContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.timerCountdown {
+    color: red;
+}
+
+::ng-deep mat-radio-group .highlight {
+    .mat-radio-label-content {
+        background-color: lime;
+    }
+}

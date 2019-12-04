@@ -1,0 +1,67 @@
+<span *ngIf="question.timer && !isReadOnly" class="timerCountdown">You have {{secondsTimer}} seconds to respond this question.</span>
+
+<div *ngIf="question.type == 'singleTextbox'">
+    <div class="textContainer">
+        <span>
+            {{question.questionText}}
+        </span>
+        <div *ngIf="isReadOnly && isPalindrome(question.answer1)" class="check">
+            <i class="material-icons">check</i>
+        </div>
+    </div>
+    <div class="inputContainer">
+        <mat-form-field>
+            <input [(ngModel)]="question.answer1" matInput placeholder="Palindrome">
+        </mat-form-field>
+    </div>
+</div>
+
+<div *ngIf="question.type == 'twoTextbox'">
+    <div class="textContainer">
+        <span>
+            {{question.questionText}}
+        </span>
+        <div *ngIf="isReadOnly && isPalindrome(question.answer1, question.answer2)" class="check">
+            <i class="material-icons">check</i>
+        </div>
+    </div>
+    <div class="inputsContainer">
+        <mat-form-field>
+            <input [(ngModel)]="question.answer1" matInput placeholder="Phrase">
+        </mat-form-field>
+        <mat-form-field>
+            <input [(ngModel)]="question.answer2" matInput placeholder="Reverse Phrase">
+        </mat-form-field>
+    </div>
+</div>
+
+<div *ngIf="question.type == 'singleOption'">
+    <div class="textContainer">
+        <span>
+            {{question.questionText}}
+        </span>
+    </div>
+    <div class="inputContainer">
+        <mat-radio-group [(ngModel)]="question.answer">
+            <mat-radio-button *ngFor="let option of question.options" [value]="option" [ngClass]="{'highlight': isValidAnswer(option)}">{{option}}</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>
+
+<div *ngIf="question.type == 'multipleOption'">
+    <div class="textContainer">
+        <span>
+            {{question.questionText}}
+        </span>
+        <div *ngIf="isReadOnly && validateAnswers()" class="check">
+            <i class="material-icons">check</i>
+        </div>
+    </div>
+    <div class="inputContainer">
+        <mat-list-item *ngFor="let option of question.options">
+          <mat-checkbox
+            [(ngModel)]="option.checked"
+          >{{ option.text }}</mat-checkbox>
+        </mat-list-item>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="content">
+<div class="questionContainer">
+ <div *ngFor="let question of questions">
+     <div class="question" *ngIf="question.active">
+         <app-question [question]="question" (timerEvent)="nextQuestion($event)"></app-question>
+     </div>
+ </div>
+</div>
+<div class="actionContainer nextButton">
+    <button mat-button (click)="nextQuestion()">{{buttonText}}</button>
+</div>
+<div class="progress-container">
+    <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>
+</div>
+</div>
